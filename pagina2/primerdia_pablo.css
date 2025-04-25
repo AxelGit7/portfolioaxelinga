@@ -1,0 +1,658 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* MINI BARRA SUPERIOR */
+.top-bar {
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    padding: 10px 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Texto de promociones */
+.promo-text {
+    text-align: center;
+    flex: 1;
+    font-weight: bold;
+}
+
+/* Botones de contacto y negocio */
+.top-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    margin-left: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.top-links a:hover {
+    background-color: black;
+    color: white;
+}
+
+/* HEADER PRINCIPAL */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 15px 140px;
+    color: white;
+}
+
+/* Sección izquierda (Logo + Botones) */
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+    margin-right: 40px;
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
+/* Sección de búsqueda e iconos */
+.search-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Barra de búsqueda */
+.search-icons input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: gray;
+    color: white;
+    outline: none;
+}
+
+/* Íconos */
+.search-icons i {
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-icons i:hover {
+    color: red;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Para tablets */
+@media (max-width: 1024px) {
+    header, .top-bar {
+        padding: 10px 50px;
+    }
+}
+
+/* Para móviles */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 20px;
+    }
+
+    .left-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-icons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+ 
+
+/* Sección de Zapatilla Interactiva */
+.product-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    height: 80vh;  /* Altura completa */
+    background-color: #f5f5f5;
+}
+
+/* Contenedor de la imagen y los botones de color */
+.shoe-image-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    height: 100%;
+    position: relative;
+}
+
+/* Imagen de la zapatilla */
+.shoe-image-container img {
+    width: 80%;
+    height: auto;
+    max-height: 80%;
+}
+
+/* Botones de color en columna a la izquierda de la imagen */
+/* Botones de colores en la sección de la zapatilla */
+.color-button {
+    width: 100px;  /* Ancho más grande */
+    height: 100px; /* Altura más equilibrada */
+    border-radius: 50%;  /* Hacemos los botones circulares */
+    margin: 10px; /* Espaciado entre los botones */
+    background-color: #ddd;
+    border: 2px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 30px; /* Tamaño del texto para que se vea bien */
+}
+
+/* Efecto hover para los botones */
+.color-button:hover {
+    background-color: #f6844a;  /* Color de hover */
+    border-color: #e65c3a; /* Bordes en color complementario al hover */
+    transform: scale(1.1); /* Aumenta el tamaño del botón al pasar el mouse */
+}
+
+/* Cambio de color del botón cuando se selecciona */
+.color-button.selected {
+    background-color: #f6844a;  /* Fondo de color cuando es seleccionado */
+    border-color: #e65c3a;  /* Cambio de borde cuando está seleccionado */
+}
+
+
+/* Colores específicos de cada botón */
+.color-circle.negra {
+    background-color: #000000; /* Negro */
+}
+
+.color-circle.roja {
+    background-color: rgb(224, 25, 25); /* Rojo */
+}
+
+.color-circle.violeta {
+    background-color: rgb(96, 47, 203); /* Violeta */
+}
+
+.color-circle.azul {
+    background-color: rgb(34, 66, 174); /* Azul */
+}
+
+.color-circle.dorada {
+    background-color: rgb(215, 180, 73); /* Dorado */
+}
+
+/* Sección de la descripción y compra (fondo interactivo y transparente) */
+.product-details {
+    width: 50%;
+    padding: 20px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; /* Necesario para superponer la descripción y el botón */
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
+    border-radius: 10px;
+    margin-bottom: 200px;
+    margin-top: 200px;
+}
+
+/* Descripción */
+.description h2 {
+    font-size: 50px; /* Aumentamos el tamaño de la fuente */
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.description p {
+    font-size: 35px; /* Aumentamos el tamaño de la fuente */
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Botón "Hacer pedido" */
+.order-button {
+    padding: 20px 40px; /* Aumentamos el tamaño del botón */
+    font-size: 24px; /* Aumentamos el tamaño de la fuente */
+    background-color: #ff5733; /* Color por defecto (naranja) */
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.order-button:hover {
+    background-color: #ff7043;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .product-illustration {
+        flex-direction: column;
+    }
+
+    .shoe-image-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .product-details {
+        width: 100%;
+    }
+
+    .shoe-image-container img {
+        width: 100%;
+        max-height: 60%;
+    }
+
+    .color-buttons button {
+        margin: 5px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .description h2 {
+        font-size: 28px;
+    }
+
+    .description p {
+        font-size: 18px;
+    }
+
+    .order-button {
+        padding: 15px 30px;
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+/* Sección del Carrito */
+#cart-container {
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    width: 300px;
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    background-color: #2c2c2c; /* Fondo oscuro para el carrito */
+    z-index: 1000;
+    max-height: 300px; /* Limita la altura del carrito */
+    overflow-y: auto; /* Añade la barra de desplazamiento */
+}
+
+.hidden {
+    display: none;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 15px;
+    padding: 8px;
+    background-color: #444; /* Fondo oscuro para los elementos del carrito */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-remove {
+    background-color: #e74c3c; /* Rojo para eliminar */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-remove:hover {
+    background-color: #c0392b; /* Rojo más oscuro en hover */
+}
+
+.btn-primary {
+    padding: 10px;
+    width: 100%;
+    background-color: #000; /* Botón negro */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #333; /* Hover gris oscuro para el botón */
+}
+
+/* Diseño de la cuadrícula de productos */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 270px;  /* Ajustado el ancho */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;  /* Necesario para los iconos en la esquina */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.product img {
+    width: 100%;  /* Ocupa todo el ancho del contenedor */
+    height: 300px;  /* Ajusta la altura de la imagen */
+    object-fit: cover;  /* Mantiene la proporción de la imagen sin deformarse */
+    transition: transform 0.7s ease-in-out;  /* Para el hover de las imágenes */
+}
+
+.product img:hover {
+    transform: scale(1.1);  /* Efecto de zoom cuando pasas el mouse sobre la imagen */
+}
+
+.product h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.product p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.product-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    color: black;
+}
+
+.product-icons i {
+    cursor: pointer;
+}
+
+.product-icons i:hover {
+    color: #f6844a; /* Color de hover */
+}
+
+.comprar {
+    background-color: #f6844a;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.comprar:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+#comprar {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+/* Estilo de los iconos en la parte inferior */
+.icon-carrito {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.icon-carrito i {
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-carrito i:hover {
+    color: rgb(249, 142, 42);
+    transform: scale(1.06);
+}
+
+.comprar {
+    background-color: #000; /* Botón negro para comprar */
+    border: none;
+    padding: 10px 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 15px;
+    color: #fff;
+}
+
+.comprar:hover {
+    transform: scale(1.14);
+    background-color: #333; /* Hover gris oscuro */
+}
+
+/* Estilo de la barra de búsqueda */
+.search-bar-container {
+    margin: 20px auto;
+    text-align: center;
+}
+
+#product-search-input {
+    padding: 15px;
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #333; /* Fondo oscuro en la barra de búsqueda */
+    color: #fff; /* Texto blanco en la barra de búsqueda */
+}
+
+#product-search-input::placeholder {
+    color: #bbb; /* Placeholder gris claro */
+}
+
+/* Estilos de la galería de imágenes */
+#container {
+    position: relative;
+    margin-top: 100px;
+}
+
+.gallery {
+    opacity: 0;
+    height: 400px;
+    width: 100%;
+    position: absolute;
+    transition: 2s;
+    border-radius: 10px;
+}
+
+#container .gallery:first-of-type {
+    opacity: 1;
+}
+
+/* Estilos para los botones de color */
+.color-circle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.color-circle.negra {
+    background-color: #1d1d1d; /* Negro */
+}
+
+.color-circle.roja {
+    background-color: rgb(236, 49, 49); /* Rojo */
+}
+
+.color-circle.violeta {
+    background-color: rgb(96, 47, 203); /* Violeta */
+}
+
+.color-circle.azul {
+    background-color: rgb(34, 66, 174); /* Azul */
+}
+
+.color-circle.dorada {
+    background-color: rgb(215, 180, 73); /* Dorado */
+}
+
+/* Estilo de la sección de descripción del producto */
+.product-details {
+    width: 50%;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
+    border-radius: 10px;
+}
+
+.product-details h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-details p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-details .order-button {
+    padding: 15px;
+    background-color: #000; /* Botón negro */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.product-details .order-button:hover {
+    background-color: #333; /* Hover gris oscuro para el botón */
+}
+
+/* Ajustes para la barra de búsqueda */
+#product-search-input::placeholder {
+    font-size: 16px;
+    color: #888;
+}
+
+/* Ajustes para la galería de productos */
+.product img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.product h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    color: black;
+}
+
+.product-icons i {
+    cursor: pointer;
+}
+
+.product-icons i:hover {
+    color: #f6844a; /* Color al pasar el mouse */
+}

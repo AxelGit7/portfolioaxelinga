@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Store</title>
+    <link rel="stylesheet" href="primerdia_pablo.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Mini barra superior -->
+    <div class="top-bar">
+        <p class="promo-text">🚚 Envío gratis a partir de $149.999 | 💳 3, 6 y 9 cuotas sin interés con monto mínimo</p>
+        <div class="top-links">
+            <a href="#">Contacto</a>
+            <a href="#">Negocio</a>
+        </div>
+    </div>
+
+    <!-- Header principal -->
+    <header>
+        <div class="left-section">
+            <div class="logo">
+                <img src="img/logo.png" alt="Nike Logo">
+            </div>
+            <nav>
+                <a href="#">Inicio</a>
+                <a href="#">Hombres</a>
+                <a href="#">Mujeres</a>
+                <a href="#">Ofertas</a>
+                <a href="#">Novedades</a>
+            </nav>
+        </div>
+
+        <div class="search-icons">
+            <input type="text" placeholder="Buscar...">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-user"></i>
+        </div>
+    </header>
+
+<section class="product-illustration">
+    <!-- Sección de la imagen de la zapatilla -->
+    <div class="shoe-image-container">
+        <img id="shoeImage" src="zapatillas/jordan_nike_negras.png" alt="Zapatilla Modelo" />
+        
+        <div class="color-buttons">
+            <!-- Botones de colores verticales -->
+            <button onclick="changeColor('negra')" class="color-circle negra"></button>
+            <button onclick="changeColor('roja')" class="color-circle roja"></button>
+            <button onclick="changeColor('violeta')" class="color-circle violeta"></button>
+            <button onclick="changeColor('azul')" class="color-circle azul"></button>
+            <button onclick="changeColor('dorada')" class="color-circle dorada"></button>
+        </div>
+    </div>
+
+    <!-- Sección de descripción y compra (con fondo interactivo) -->
+    <div class="product-details" id="product-details">
+        <div class="description">
+            <h2>Air Jordan Nike</h2>
+            <p>La zapatilla Air Jordan Nike es ideal para los amantes del deporte y el estilo urbano. Con una combinación de comodidad y diseño, esta zapatilla ofrece soporte, durabilidad y un estilo único. Disponible en diversos colores para adaptarse a tu estilo personal.</p>
+        </div>
+
+        <button class="order-button">Hacer pedido</button>
+    </div>
+</section>
+
+
+<!-- Carrito de Compras -->
+<div id="cart-container" class="hidden">
+    <h2>Carrito de Compras</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="cart-total">0</span></p>
+    <button id="checkout-btn" class="btn-primary">Comprar</button>
+ </div>
+ 
+ <!-- Barra de Búsqueda -->
+ <div class="buscarproductos">
+    <div class="search-bar-container">
+       <input type="text" id="product-search-input" placeholder="Busca tu producto aquí..." oninput="filterProducts()">
+    </div>
+ </div>
+
+ <!-- Sección de Productos -->
+ <div class="product-grid">
+    <!-- Producto 1 -->
+    <div class="product" data-category="zapatillas">
+        <a href="#"> 
+            <img src="zapatillas/jordan_nike_negras.png" alt="Zapatilla Negra">
+        </a>
+        <h3>Jordan Nike Negras</h3>
+        <p>Precio: $120</p>
+        <p>Cantidad: 50</p>
+        <div class="product-icons">
+            <i class="fa-solid fa-cart-arrow-down"></i>
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="comprar">
+            <a href="#" id="comprar">Comprar</a>
+        </div>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="product" data-category="zapatillas">
+        <a href="#"> 
+            <img src="zapatillas/jordan_nike_rojas.png" alt="Zapatilla Roja">
+        </a>
+        <h3>Jordan Nike Rojas</h3>
+        <p>Precio: $125</p>
+        <p>Cantidad: 40</p>
+        <div class="product-icons">
+            <i class="fa-solid fa-cart-arrow-down"></i>
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="comprar">
+            <a href="#" id="comprar">Comprar</a>
+        </div>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="product" data-category="zapatillas">
+        <a href="#"> 
+            <img src="zapatillas/jordan_nike_violetas.png" alt="Zapatilla Violeta">
+        </a>
+        <h3>Jordan Nike Violetas</h3>
+        <p>Precio: $130</p>
+        <p>Cantidad: 30</p>
+        <div class="product-icons">
+            <i class="fa-solid fa-cart-arrow-down"></i>
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="comprar">
+            <a href="#" id="comprar">Comprar</a>
+        </div>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="product" data-category="zapatillas">
+        <a href="#"> 
+            <img src="zapatillas/jordan_nike_azules.png" alt="Zapatilla Azul">
+        </a>
+        <h3>Jordan Nike Azules</h3>
+        <p>Precio: $135</p>
+        <p>Cantidad: 25</p>
+        <div class="product-icons">
+            <i class="fa-solid fa-cart-arrow-down"></i>
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="comprar">
+            <a href="#" id="comprar">Comprar</a>
+        </div>
+    </div>
+
+    <!-- Producto 5 -->
+    <div class="product" data-category="zapatillas">
+        <a href="#"> 
+            <img src="zapatillas/jordan_nike_doradas.png" alt="Zapatilla Dorada">
+        </a>
+        <h3>Jordan Nike Doradas</h3>
+        <p>Precio: $140</p>
+        <p>Cantidad: 20</p>
+        <div class="product-icons">
+            <i class="fa-solid fa-cart-arrow-down"></i>
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        <div class="comprar">
+            <a href="#" id="comprar">Comprar</a>
+        </div>
+    </div>
+</div>
+
+
+<script src="primerdia_pablo.js"></script>
+</body>
+</html>
