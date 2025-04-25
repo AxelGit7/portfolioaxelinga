@@ -14,22 +14,18 @@
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
-<!-- Botón de menú desplegable -->
-<div class="menu-toggle" onclick="toggleMenu()">
-  <i class="fas fa-bars"></i>
-</div>
-
-<!-- Menú desplegable -->
-<div class="menu" id="menu">
+<!-- MENÚ HAMBURGUESA LATERAL IZQUIERDO -->
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+<nav class="side-menu" id="sideMenu">
   <ul>
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#objetivo">Objetivo Profesional</a></li>
-    <li><a href="#proyectos">Proyectos</a></li>
-    <li><a href="#galeria">Galería Web</a></li>
+    <li><a href="#hero">Inicio</a></li>
+    <li><a href="#sobre-mi">Sobre Mí</a></li>
+    <li><a href="#proyectos">Proyectos Web</a></li>
     <li><a href="#habilidades">Habilidades</a></li>
+    <li><a href="#objetivo">Objetivo Profesional</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
-</div>
+</nav>
 
   
     <section id="hero" class="hero flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-20">
@@ -92,43 +88,52 @@
       
         </div>
       </section>
+      <section class="proyectos-section" id="proyectos">
+        <h2 class="proyectos-title">Proyectos</h2>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            
+            <div class="swiper-slide proyecto-card">
+              <h3 class="proyecto-title">Escáner de Productos</h3>
+              <p class="proyecto-descripcion">App con C# y MySQL que permite escanear productos y mostrarlos en un programa.</p>
+              <span class="proyecto-etiqueta">C# / MySQL / WinForms</span>
+            </div>
       
-  <section class="seccion bg-gray-800" id="proyectos">
-    <h2 class="seccion-title text-center">Proyectos</h2>
-    <div class="relative">
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide card">
-            <h3 class="card-title">Escáner de Productos</h3>
-            <p>App con C# y MySQL que permite escanear productos y mostrarlos como en un supermercado.</p>
-            <span class="card-etiqueta">C# / MySQL / WinForms</span>
+            <div class="swiper-slide proyecto-card">
+              <h3 class="proyecto-title">Auto Arduino RC</h3>
+              <p class="proyecto-descripcion">Auto a control remoto programado con Arduino y controlado por Bluetooth.</p>
+              <span class="proyecto-etiqueta">Arduino / Bluetooth</span>
+            </div>
+      
+            <div class="swiper-slide proyecto-card">
+              <h3 class="proyecto-title">Web para Supermercado</h3>
+              <p class="proyecto-descripcion">Sitio web completo para un autoservicio con secciones animadas y diseño moderno.</p>
+              <span class="proyecto-etiqueta">HTML / CSS / JS</span>
+            </div>
+      
+            <div class="swiper-slide proyecto-card">
+              <h3 class="proyecto-title">Iluminación Automatizada</h3>
+              <p class="proyecto-descripcion">Sistema automático de encendido de luces con Arduino y sensores.</p>
+              <span class="proyecto-etiqueta">Arduino / ChatGPT</span>
+            </div>
+      
+            <div class="swiper-slide proyecto-card">
+              <h3 class="proyecto-title">Puntos Inteligentes MNBA</h3>
+              <p class="proyecto-descripcion">Interfaz accesible para el Museo Nacional de Bellas Artes con puntos interactivos.</p>
+              <span class="proyecto-etiqueta">HTML / CSS / Accesibilidad</span>
+            </div>
+      
           </div>
-          <div class="swiper-slide card">
-            <h3 class="card-title">Auto Arduino RC</h3>
-            <p>Auto a control remoto programado con Arduino y controlado por Bluetooth.</p>
-            <span class="card-etiqueta">Arduino / Bluetooth</span>
-          </div>
-          <div class="swiper-slide card">
-            <h3 class="card-title">Web para Supermercado</h3>
-            <p>Sitio web completo para un autoservicio con secciones animadas y diseño moderno.</p>
-            <span class="card-etiqueta">HTML / CSS / JS</span>
-          </div>
-          <div class="swiper-slide card">
-            <h3 class="card-title">Sistema automatizado de Ilumiinacion</h3>
-            <p>Creación de Sistema automatico de encendido de luces</p>
-            <span class="card-etiqueta">Arduino / ChatGPT</span>
-          </div>
-          <div class="swiper-slide card">
-            <h3 class="card-title">Sistema de Puntos Inteligentes MNBA</h3>
-            <p>Diseño de interfaz accesible para el Museo Nacional de Bellas Artes.</p>
-            <span class="card-etiqueta">HTML / CSS / Accesibilidad</span>
-          </div>
+      
+          <!-- Botones de navegación -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          
+          <!-- Paginación opcional -->
+          <div class="swiper-pagination"></div>
         </div>
-      </div>
-      <div class="swiper-button-prev text-yellow-500"></div>
-      <div class="swiper-button-next text-yellow-500"></div>
-    </div>
-  </section>
+      </section>
+      
 
   <section class="galeria-web">
     <h1>Mis Proyectos Web</h1>
@@ -375,26 +380,38 @@
   </footer>
   
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper-container', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: true,
-      navigation: {
-        prevEl: '.swiper-button-prev',
-        nextEl: '.swiper-button-next',
+<!-- SwiperJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    grabCursor: true,
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
       },
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
+      640: {
+        slidesPerView: 1.2,
       },
-    });
-  </script>
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
+</script>
 
 <script>
   function toggleMenu() {
