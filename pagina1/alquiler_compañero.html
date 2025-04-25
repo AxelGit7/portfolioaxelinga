@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentAFriend - Tu Compañía Perfecta</title>
+    <link rel="stylesheet" href="alquiler_compañero.css"> <!-- Asegúrate de que el archivo exista -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="hero-section">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="logo.png" alt="RentAFriend Logo" class="logo"> <!-- Asegúrate de que el archivo exista -->
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#como-funciona">¿Cómo funciona?</a></li>
+                <li><a href="#registro">Registro</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contactos">Contactos</a></li>
+                <li><a href="alquiler_compañero.html"><i class="fas fa-home"></i></a></li>
+                <li><a href="#cuenta"><i class="fas fa-user"></i></a></li>
+                <li><a href="#menu"><i class="fas fa-bars"></i></a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">RentAFriend</h1>
+            <p class="hero-subtitle">Tu Compañía Perfecta</p>
+            <a href="#explore" class="cta-button" id="explore">Explora Amigos</a>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section" >
+        <h2>Encuentra tu Compañero Ideal</h2>
+        <p class="search-description">Busca con quién y dónde quieres alquilar un amigo o encontrar una amiga</p>
+        <form class="search-form" id="searchForm">
+            <div class="form-group" id="como-funciona">
+                <label for="zona"><i class="fas fa-map-marker-alt"></i> Zona:</label>
+                <select id="zona" name="zona">
+                    <option value="cualquiera">Cualquiera</option>
+                    <option value="Berazategui">Berazategui</option>
+                    <option value="Ranelagh">Ranelagh</option>
+                    <option value="Platanos">Platanos</option>
+                    <option value="Barrio Luz">Barrio Luz</option>
+                    <option value="Santa Rosa">Santa Rosa</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="genero"><i class="fas fa-venus-mars"></i> Género:</label>
+                <select id="genero" name="genero">
+                    <option value="Ambos">Ambos</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="gustos"><i class="fas fa-heart"></i> Gustos / Aficiones:</label>
+                <select id="gustos" name="gustos">
+                    <option value="cualquiera">Cualquiera</option>
+                    <option value="musica">Escuchar música</option>
+                    <option value="futbol">Jugar futbol</option>
+                    <option value="Play">Jugar al Play</option>
+                    <option value="eventos">Acompañar a eventos</option>
+                    <option value="Dibujar">Dibujar o pintar</option>
+                    <option value="instrumento">Tocar instrumento</option>
+                    <option value="cafe">Tomar un café</option>
+                    <option value="viaje">Ir de viaje</option>
+                    <option value="ejercicio">Hacer ejercicio</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="edad"><i class="fas fa-calendar-alt"></i> Rango de Edad:</label>
+                <select id="edad" name="edad">
+                    <option value="cualquiera">Cualquiera</option>
+                    <option value="18-24">Entre 18-24</option>
+                    <option value="25-34">Entre 25-34</option>
+                    <option value="35-44">Entre 35-44</option>
+                    <option value="45-54">Entre 45-54</option>
+                    <option value="54+">Más de 54</option>
+                </select>
+            </div>
+            <button type="submit" class="search-button">
+                <i class="fas fa-search"></i> Buscar
+            </button>
+        </form>
+    </section>
+    
+    <!-- Result Section -->
+    <section class="result-section" id="resultSection" style="display: none;">
+        <h2>Resultados de Búsqueda</h2>
+        <div class="results-container" id="results">
+            <!-- Aquí aparecerán las imágenes de las personas -->
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2 id="como-funciona">¿Cómo Funciona?</h2>
+        <div class="banner">
+            <img src="comofunciona.PNG" alt="Cómo Funciona RentAFriend" >
+        </div>
+        <p>Siempre es bueno tener un Amigo local sin importar a donde vayas.        </p>
+        <ul>
+            <li>¿Te mudas a una nueva ciudad, viajas por trabajo o te vas de vacaciones?</li>
+            <li>¡Contrate a un amigo local para mostrarle una nueva ciudad!</li>
+            <li id="registro">Conozca los mejores lugares para ir de compras, comer, entretenerse, alojarse en hoteles y más</li>
+
+        </ul>
+    </section>
+   
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-image" style="background-image: url('registarsefondo.jpg');"></div>
+            <div class="auth-form">
+                <h2>Regístrate</h2>
+                <input type="email" id="register-email" placeholder="Tu Gmail" required>
+                <input type="password" id="register-password" placeholder="Crear una contraseña" required>
+                <div class="password-requirements">
+                    <ul>
+                        <li id="length-requirement" class="invalid">Al menos 8 caracteres</li>
+                        <li id="uppercase-requirement" class="invalid">Una letra mayúscula</li>
+                        <li id="number-requirement" class="invalid">Un número</li>
+                    </ul>
+                </div>
+                <button onclick="register()">Registrarse</button>
+            </div>
+        </div>
+        
+        <div class="auth-container reversed">
+            <div class="auth-form">
+                <h2>Iniciar Sesión</h2>
+                <input type="email" id="login-email" placeholder="Tu Gmail" required>
+                <div class="password-container">
+                    <input type="password" id="login-password" placeholder="Tu contraseña" required>
+                    <span onclick="togglePasswordVisibility('login-password')">👁️</span>
+                </div>
+                <button onclick="login()">Iniciar Sesión</button>
+                <p><a href="#" id="testimonios">Olvidé mi contraseña</a></p>
+            </div>
+            <div class="auth-image" style="background-image: url('iniciarsesionfondo.webp');" ></div>
+        </div>
+    </section>
+    
+
+
+    <section class="testimonials-section">
+        <h2>Lo que dicen nuestros amigos</h2>
+        <div class="testimonials-container">
+            <div class="testimonial testimonial-blue active">
+                <p><strong>Fabricio:</strong> ¡Fue una experiencia increíble! Encontré amigos con intereses similares.</p>
+            </div>
+            <div class="testimonial testimonial-orange">
+                <p><strong>Francisco:</strong> Me encantó la idea de alquilar amigos, ¡definitivamente lo haré de nuevo!</p>
+            </div>
+            <div class="testimonial testimonial-blue">
+                <p><strong>Santino:</strong> Genial para socializar y hacer nuevos amigos, ¡100% recomendado!</p>
+            </div>
+            <div class="testimonial testimonial-orange">
+                <p><strong>Marcelo:</strong> ¡Me divertí muchísimo! Los amigos que alquilé eran geniales.</p>
+            </div>
+            <div class="testimonial testimonial-blue">
+                <p><strong>Sebastian:</strong> Una experiencia única, muy contenta con el servicio.</p>
+            </div>
+        </div>
+        <button class="nav-button left" onclick="prevTestimonial()">&#10094;</button>
+        <button class="nav-button right" onclick="nextTestimonial()">&#10095;</button>
+    </section>
+    
+
+    
+
+    <script src="alquiler_compañero.js"></script>
+</body>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="social-media">
+        <img src="logo.png" alt="Logo" class="footer-logo"> <!-- Asegúrate de cambiar la ruta -->
+       
+            <div class="redes-sociales">
+                <a href="#" class="fab fa-whatsapp"></a>
+                <a href="#" class="fab fa-facebook"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <a href="#politica" class="footer-button">Política de Privacidad</a>
+            <a href="#terminos" class="footer-button">Términos de Servicio</a>
+            <a href="#terminos" class="footer-button">Contactenos</a>
+            <a href="#terminos" class="footer-button">Sobre Nosotros</a>
+        </div>
+        <div class="payment-methods">
+            <h1>Metodos de Pago</h1>
+            <img src="visa.png" alt="Método de Pago" class="payment-icon"> <!-- Asegúrate de cambiar la ruta -->
+            <img src="mastecard.png" alt="Método de Pago" class="payment-icon">
+            <img src="bbva.png" alt="Método de Pago" class="payment-icon">
+            <img src="mercadopago.png" alt="Método de Pago" class="payment-icon"> <!-- Asegúrate de cambiar la ruta -->
+            <img src="paypal.png" alt="Método de Pago" class="payment-icon">
+            <img src="santander.png" alt="Método de Pago" class="payment-icon">
+            <img src="bcp.png"Método de Pago" class="payment-icon">
+            <img src="macro.png" alt="Método de Pago" class="payment-icon">
+        </div>
+      
+    </div>
+</footer>
+
+</html>
